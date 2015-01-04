@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<chordii>
+  <file>Traditional - Wayfaring Stranger.pro</file>
+  <lyrics>
+    <size>16</size>
+    <font>Times New Roman</font>
+    <single>True</single>
+  </lyrics>
+  <chords>
+    <size>14</size>
+    <font>Times New Roman</font>
+    <show>True</show>
+    <transpose>0</transpose>
+  </chords>
+  <grids>
+    <size>24</size>
+    <show>True</show>
+  </grids>
+</chordii>

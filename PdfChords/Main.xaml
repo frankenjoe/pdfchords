@@ -1,0 +1,94 @@
+﻿<Window x:Class="PdfChords.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PdfChords"
+    AllowDrop="True" Height="600" Width="800" WindowState="Maximized">
+
+    <Grid Name="main" FlowDirection="LeftToRight" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" MinWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="500" MinWidth="500"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Menu Name="menu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" AllowDrop="False" Margin="0,0,0,0">
+            <MenuItem Header="File">                                
+            </MenuItem>
+        </Menu-->
+
+        <Expander Name="browser_expander" Grid.Row="1" Grid.Column="0" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" FlowDirection="LeftToRight" ExpandDirection="Right" IsExpanded="True">
+            <Expander.Header>
+                <TextBlock Text="Browser" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Width="Auto">
+                        <TextBlock.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </TextBlock.LayoutTransform>
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                </TextBlock>
+            </Expander.Header>
+            <local:Browser x:Name="browser"></local:Browser>
+        </Expander>
+        
+        <GridSplitter Grid.Row="1" Grid.Column="1" ResizeDirection="Columns" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></GridSplitter>
+
+        <Expander Name="editor_expander" Grid.Row="1" Grid.Column="2" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" FlowDirection="LeftToRight" ExpandDirection="Right" IsExpanded="True">
+            <Expander.Header>
+                <TextBlock Text="Editor" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Width="Auto">
+                        <TextBlock.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </TextBlock.LayoutTransform>
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                </TextBlock>
+            </Expander.Header>
+            <Grid Name="editor_grid" Margin="0" FlowDirection="LeftToRight">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <local:Editor x:Name="editor" Grid.Row="0" Grid.Column="0" AllowDrop="False"></local:Editor>
+                <local:Chordii x:Name="chordii" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left"></local:Chordii>
+                                
+            </Grid>
+        </Expander>
+
+        <GridSplitter Grid.Row="1" Grid.Column="3" ResizeDirection="Columns" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></GridSplitter>
+
+        <local:Viewer x:Name="viewer" Grid.Row="1" Grid.Column="4" ></local:Viewer>
+
+    </Grid>
+
+    
+</Window>

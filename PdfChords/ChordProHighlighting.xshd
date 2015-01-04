@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="Chord Pro Highlighting" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="Comment" foreground="#228B22" />
+	<Color name="Command" foreground="Blue" />
+  <Color name="Chord" foreground="Red" />
+	
+	<RuleSet>
+
+    <Span color="Comment" multiline="true">
+      <Begin>&lt;!--</Begin>
+      <End>--></End>
+    </Span>
+		
+		<Span color="Command">
+			<Begin>{</Begin>
+			<End>}</End>
+		</Span>
+
+    <Span color="Chord">
+      <Begin>\[</Begin>
+      <End>\]</End>
+    </Span>
+
+	</RuleSet>
+  
+</SyntaxDefinition>
