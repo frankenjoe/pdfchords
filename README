@@ -1,0 +1,46 @@
+-----------------------------------------------------
+ PDFChords
+-----------------------------------------------------
+
+ A graphical user interface to manage, edit, 
+ transpose and convert guitar chord sheets in 
+ CRD or PRO format into good looking PDF files.
+ 
+ PDFChords is developed in C#/WPF using
+ Visual Studio 2010.
+ 
+ https://github.com/frankenjoe/pdfchords
+ 
+-----------------------------------------------------
+ External Libraries and Tools
+-----------------------------------------------------
+ 
+ AvalonEdit by Daniel Grunwald
+ http://avalonedit.net/
+ 
+ Chordii by Johan Vromans
+ http://chordii.sourceforge.net/
+ 
+ FindReplace by Bruce Greene
+ http://www.codeproject.com/Tips/768408/A-Find-and-Replace-Tool-for-AvalonEdit
+ 
+ GhostScript, GhostView
+ http://www.ghostscript.com/
+ http://pages.cs.wisc.edu/~ghost/gsview/index.htm
+ 
+ MoonPdfLib by Daniel Kailer
+ http://www.codeproject.com/Articles/579878/MoonPdfPanel-A-WPF-based-PDF-Viewer-Control
+ 
+-----------------------------------------------------
+ Icon
+----------------------------------------------------- 
+ 
+ Andre Manga
+ http://mugenb16.deviantart.com/
+ http://www.iconarchive.com/show/acoustic-guitars-icons-by-mugenB16/Guitar-3-icon.html
+ License: Free for non-commercial use.
+ Commercial usage: Not allowed
+
+-----------------------------------------------------
+ Johannes Wagner <frankenjoe@hotmail.com>, 2005
+-----------------------------------------------------
