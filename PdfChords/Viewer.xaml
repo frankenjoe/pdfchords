@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ToolBar Grid.Row="0" Grid.Column="0" ToolBarTray.IsLocked="True">
+        <ToolBar Grid.Row="0" Grid.Column="0" ToolBarTray.IsLocked="True"  Background="{x:Null}" Foreground="{x:Null}">
             <Button Click="ZoomInClick" ToolTip="Zoom out (Ctrl + mouse wheel up)">
                 <Image Source="icons\zoomin.png" Width="16" Height="16"/>
             </Button>

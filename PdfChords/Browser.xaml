@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBox TextChanged="DirectoryTextChanged" Grid.Row="0" Grid.Column="0" Margin="2,0,0,0" Height="24" Text="{Binding Path=Directory, Mode=TwoWay}"></TextBox>
-        <ToolBar Grid.Row="0" Grid.Column="1" ToolBarTray.IsLocked="True">
+        <ToolBar Grid.Row="0" Grid.Column="1" ToolBarTray.IsLocked="True" Background="{x:Null}" Foreground="{x:Null}">
             <Button Click="ChangeDirectoryClick" ToolTip="Change directory">                
                     <Image Source="icons\open.png" Width="16" Height="16" />                                
             </Button>

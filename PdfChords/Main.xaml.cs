@@ -123,6 +123,7 @@ namespace PdfChords
         {
             if (!CheckIfFileHasChanged())
             {
+                e.Cancel = true;
                 return;
             }
 
@@ -409,11 +410,15 @@ namespace PdfChords
                     {
                         xmlFileManager.Load(xmlpath);
                     }
-                                        
+
                     editor.AutoPreview = autoPreview_tmp;
                     Filepath = browser.Directory + "\\" + filename;
-                    FileHasChanged = false;                        
+                    FileHasChanged = false;
                     Preview();
+                }
+                else
+                {
+                    New();
                 }
             }
             catch (Exception ex)

@@ -16,8 +16,8 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ToolBarTray Grid.Row="0" Grid.Column="0" >
-            <ToolBar Band="1" BandIndex="1" ToolBarTray.IsLocked="True">
+        <ToolBarTray Grid.Row="0" Grid.Column="0" Background="{x:Null}">
+            <ToolBar Band="1" BandIndex="1" ToolBarTray.IsLocked="True" Background="{x:Null}" Foreground="{x:Null}">
                 <ToolBar.Resources>
                     <Style TargetType="{x:Type Image}">
                         <Style.Triggers>

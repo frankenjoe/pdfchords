@@ -103,6 +103,7 @@ namespace PdfChords
                         }
                     }
                 }
+                ListBox.SelectedItem = null;
             }
             Update ();
         }
