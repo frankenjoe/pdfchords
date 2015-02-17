@@ -318,8 +318,7 @@ namespace PdfChords
             {
                 File.WriteAllText(Filepath + Defines.PRO_FILE_EXTENSION, editor.TextEditor.Text);
                 FileHasChanged = false;
-                Export();
-                browser.Update();
+                Export();                
             }
 
             if (editor.AutoPreview)
@@ -353,6 +352,8 @@ namespace PdfChords
             }
 
             Save();
+
+            browser.Update(System.IO.Path.GetFileNameWithoutExtension(Filepath), System.IO.Path.GetDirectoryName(Filepath));
         }
         
         void Editor_ButtonNew_Click(object sender, EventArgs e)

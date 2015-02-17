@@ -115,8 +115,20 @@ namespace PdfChords
 
         public void Update()
         {
-            try
+            Update (ListBox.SelectedItem == null ? null : (string)ListBox.SelectedItem, Directory);
+        }
+
+        public void Update(string fileToSelect, string directory)
+        {
+            if (directory != Directory)
             {
+                Directory = directory;
+            }
+
+            try
+            {                               
+                int selectedIndex = -1;
+
                 string[] files = System.IO.Directory.GetFiles(Directory, "*" + Defines.PRO_FILE_EXTENSION);
                 for (int i = 0; i < files.Length; i++)
                 {
@@ -126,14 +138,24 @@ namespace PdfChords
 
                 browserList.Clear();
                 ListBox.ItemsSource = null;
+                int count = 0;
                 foreach (string file in files)
                 {
                     if (file != "~")
                     {
                         browserList.Add(file);
+                        if (file == fileToSelect)
+                        {
+                            selectedIndex = count;
+                        }
                     }
+                    count++;
                 }
                 ListBox.ItemsSource = browserList;
+                if (selectedIndex >= 0)
+                {
+                    ListBox.SelectedIndex = selectedIndex;
+                }
             }
             catch (Exception e)
             {
