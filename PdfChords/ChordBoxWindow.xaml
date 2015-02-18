@@ -1,0 +1,29 @@
+﻿<Window x:Class="PdfChords.ChordBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PdfChords"  
+        Title="Insert Chord" Height="Auto" Width="Auto" SizeToContent="WidthAndHeight" Background="White" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <local:ChordBoxCanvas x:Name="ChordBox" Grid.Row="0" Grid.Column="1"></local:ChordBoxCanvas>
+
+        <Label Grid.Row="1" Grid.Column="0" Foreground="Black">Name</Label>
+        <TextBox Name="Name" Grid.Row="1" Grid.Column="1" Margin="0,5,5,5"></TextBox>
+
+        <Label Grid.Row="2" Grid.Column="0" Foreground="Black">Base</Label>
+        <ComboBox Grid.Row="2" Grid.Column="1" Margin="0,5,5,5" SelectedIndex="{Binding Path=BaseFretIndex, Mode=TwoWay}" ItemsSource="{Binding Path=BaseFret}" ToolTip="Base fret position"></ComboBox>
+
+        <Button Name="InsertButton"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">Insert</Button>
+        
+    </Grid>
+</Window>

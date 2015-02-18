@@ -118,10 +118,8 @@ namespace PdfChords
         #region contextmenu
 
         void ContextMenuChord_Click(object sender, RoutedEventArgs e)
-        {
-            InsertText("[]");
-            TextEditor.TextArea.Caret.Offset--;
-            InsertChord();
+        {            
+            InsertChordBox();
         }
 
         void ContextMenuTitle_Click(object sender, RoutedEventArgs e)
@@ -195,6 +193,17 @@ namespace PdfChords
                 TextEditor.TextArea.Caret.Offset--;
                 InsertChord();
             }
+        }
+
+        void InsertChordBox() 
+        {
+            ChordBoxWindow box = new ChordBoxWindow();
+            box.ShowDialog();
+            if (box.DialogResult == true)
+            {
+                InsertText(box.Chord());
+            }
+            box = null;
         }
  
         void InsertChord()

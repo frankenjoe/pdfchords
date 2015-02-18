@@ -1,0 +1,16 @@
+*.pdb
+*.suo
+*.log
+~.*
+PdfChords/obj/*
+PdfChords/bin/*
+PdfChords/obj/*
+AvalonEdit/bin/*
+AvalonEdit/ICSharpCode.AvalonEdit/bin/*
+AvalonEdit/ICSharpCode.AvalonEdit/obj/*
+FindReplace/FindReplace/bin/*
+FindReplace/FindReplace/obj/*
+MoonPdfLib/bin/*
+MoonPdfLib/obj/*
+MouseKeyboardActivityMonitor/bin/*
+MouseKeyboardActivityMonitor/obj/*

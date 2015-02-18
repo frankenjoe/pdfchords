@@ -111,7 +111,7 @@
                     <MenuItem Command="Undo"></MenuItem>
                     <MenuItem Command="Redo"></MenuItem>
                     <Separator/>
-                    <MenuItem Name="ContextMenuChord" Header="Chord" ToolTip="Insert chord"></MenuItem>
+                    <MenuItem Name="ContextMenuChord" Header="Chord Definition" ToolTip="Insert chord definition"></MenuItem>
                     <MenuItem Name="ContextMenuTitle" Header="Title" ToolTip="Insert title tag"></MenuItem>
                     <MenuItem Name="ContextMenuSubTitle" Header="SubTitle" ToolTip="Insert subtitle tag"></MenuItem>
                     <MenuItem Name="ContextMenuChorus" Header="Chorus" ToolTip="Insert chorus tag"></MenuItem>
