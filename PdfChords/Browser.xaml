@@ -6,6 +6,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -29,7 +30,11 @@
                 </StackPanel>
             </Button>
         </ToolBar>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.ColumnSpan="2">
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+            <Label>Filter</Label>
+            <TextBox Name="FilterText" TextChanged="FilterTextChanged" Margin="2,0,0,0" Height="24" HorizontalAlignment="Stretch" Text="{Binding Path=Filter, Mode=TwoWay}"></TextBox>
+        </DockPanel >
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" Grid.Row="2" Grid.ColumnSpan="2">
             <ListBox Name="ListBox" BorderBrush="{x:Null}" ></ListBox>          
         </ScrollViewer>
     </Grid>

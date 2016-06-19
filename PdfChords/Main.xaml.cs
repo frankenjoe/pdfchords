@@ -92,6 +92,7 @@ namespace PdfChords
             editor.ButtonNew.Click +=new RoutedEventHandler(Editor_ButtonNew_Click);
             editor.ButtonSave.Click += new RoutedEventHandler(Editor_ButtonSave_Click);
             editor.ButtonSaveAs.Click += new RoutedEventHandler(Editor_ButtonSaveAs_Click);
+            editor.ButtonRename.Click += new RoutedEventHandler(Editor_Rename_Click);
             editor.ButtonOpen.Click += new RoutedEventHandler(Editor_ButtonOpen_Click);
             editor.TextEditor.Drop += new DragEventHandler(Editor_TextEditor_Drop);
             editor.FinishEditEvent += new Editor_FinishEditDelegate(Editor_FinishEditEvent);
@@ -332,7 +333,7 @@ namespace PdfChords
             SaveAs();
         }
 
-        void SaveAs () {
+        bool SaveAs () {
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.DefaultExt = Defines.PRO_FILE_EXTENSION;
@@ -348,14 +349,39 @@ namespace PdfChords
             }
             else
             {
-                return;
+                return false;
             }
 
             Save();
-
             browser.Update(System.IO.Path.GetFileNameWithoutExtension(Filepath), System.IO.Path.GetDirectoryName(Filepath));
+
+            return true;
         }
-        
+
+        void Editor_Rename_Click(object sender, EventArgs e)
+        {
+            Rename();
+        }
+
+        void Rename()
+        {
+            string oldFilePath = Filepath;
+            if (SaveAs())
+            {
+                if (oldFilePath != null && oldFilePath != Filepath)
+                {
+                    string directory = System.IO.Path.GetDirectoryName(oldFilePath);
+                    string name = System.IO.Path.GetFileName(oldFilePath);
+                    string[] files = System.IO.Directory.GetFiles(directory, name + ".*");
+                    foreach (String file in files)
+                    {
+                        File.Delete(file);
+                    }
+                }
+                browser.Update(System.IO.Path.GetFileNameWithoutExtension(Filepath), System.IO.Path.GetDirectoryName(Filepath));
+            }
+        }
+
         void Editor_ButtonNew_Click(object sender, EventArgs e)
         {
             New();

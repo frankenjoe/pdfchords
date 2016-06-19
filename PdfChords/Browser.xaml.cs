@@ -156,6 +156,8 @@ namespace PdfChords
                 {
                     ListBox.SelectedIndex = selectedIndex;
                 }
+
+                FilterText.Text = "";
             }
             catch (Exception e)
             {
@@ -178,6 +180,19 @@ namespace PdfChords
                 Directory = dialogue.FileName;
             }
         }
+
+        private void FilterTextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Filter = FilterText.Text.Trim().Replace("'", "''");
+                ListBox.ItemsSource = new BindingList<string>(browserList.Where(m => (m.IndexOf(Filter, 0, StringComparison.CurrentCultureIgnoreCase) != -1)).ToList<string>());
+            }
+            catch (Exception ex)
+            {
+                Error.Show(ex.Message.ToString());
+            }
+        }        
 
     }
 }

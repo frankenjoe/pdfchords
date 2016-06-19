@@ -39,6 +39,9 @@
                 <Button Name="ButtonSaveAs" ToolTip="Save current sheet under new name">
                     <Image Source="icons/saveas.png" Height="16"/>
                 </Button>
+                <Button Name="ButtonRename" ToolTip="Rename current sheet">
+                    <Image Source="icons/rename.png" Height="16" Width="16"/>
+                </Button>
                 <Separator/>
                 <CheckBox IsChecked="{Binding Path=XmlExport, Mode=TwoWay}" ToolTip="Turn on/off: save sheet settings (.XML)">
                     <Image Source="icons/xml.png" Height="16"/>
