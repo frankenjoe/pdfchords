@@ -26,8 +26,8 @@
             <Separator></Separator>
             <Button Name="ButtonPrint" ToolTip="Print sheet using the selected device">
                     <Image Source="icons\print.png" Width="16" Height="16"/>                
-            </Button>            
-            <ComboBox Name="PrinterSelection" Width="300" Height="16" ItemsSource="{x:Static Printing:PrinterSettings.InstalledPrinters}" SelectedIndex="{Binding Path=PrinterIndex, Mode=TwoWay}" />
+            </Button>
+            <ComboBox Name="PrinterSelection" Width="300" Height="16" FontSize="10.667" ItemsSource="{x:Static Printing:PrinterSettings.InstalledPrinters}" SelectedIndex="{Binding Path=PrinterIndex, Mode=TwoWay}" />
         </ToolBar>
 
         <mpp:MoonPdfPanel Grid.Row="1" Grid.Column="0" ViewType="SinglePage" PageRowDisplay="ContinuousPageRows" PageMargin="0,2,4,2" AllowDrop="True" x:Name="moonPdfPanel" x:FieldModifier="private"/>

@@ -8,14 +8,13 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="5,5,5,0" Grid.Row="0">            
-            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="60">Lyrics</Label>
-            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="50" IsChecked="{Binding Path=LyricsSingle, Mode=TwoWay}" ToolTip="Single lined lyrics">Single</CheckBox>           
+            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="50">Lyrics</Label>
+            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="55" IsChecked="{Binding Path=LyricsSingle, Mode=TwoWay}" ToolTip="Single lined lyrics">Single</CheckBox>           
             <Label Margin="0,0,-5,0">Size=</Label>
-            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="45" Height="20" SelectedIndex="{Binding Path=LyricsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontSizes}" ToolTip="Lyrics font size"></ComboBox>
+            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="50" Height="20" FontSize="10.667" SelectedIndex="{Binding Path=LyricsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontSizes}" ToolTip="Lyrics font size"></ComboBox>
             <Label Margin="0,0,-5,0" VerticalAlignment="Center">Font=</Label>
             <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="100" Height="20" SelectedIndex="{Binding Path=LyricsFontIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontNames}" ToolTip="Lyrics font type">
                 <ComboBox.ItemsPanel>
@@ -25,7 +24,7 @@
                 </ComboBox.ItemsPanel>
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="10.667" Height="20"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
@@ -35,10 +34,10 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="5,0,5,0" Grid.Row="1">
-            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="60">Chords</Label>
-            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="50" IsChecked="{Binding Path=ChordsShow, Mode=TwoWay}" ToolTip="Show chords">Show</CheckBox>            
+            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="50">Chords</Label>
+            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="55" IsChecked="{Binding Path=ChordsShow, Mode=TwoWay}" ToolTip="Show chords">Show</CheckBox>            
             <Label Margin="0,0,-5,0">Size=</Label>
-            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="45" Height="20" SelectedIndex="{Binding Path=ChordsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontSizes}" ToolTip="Chords size"></ComboBox>
+            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="50" Height="20" FontSize="10.667" SelectedIndex="{Binding Path=ChordsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontSizes}" ToolTip="Chords size"></ComboBox>
             <Label Margin="0,0,-5,0" VerticalAlignment="Center">Font=</Label>
             <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="100" Height="20" SelectedIndex="{Binding Path=ChordsFontIndex, Mode=TwoWay}" ItemsSource="{Binding Path=FontNames}" ToolTip="Chords font">
                 <ComboBox.ItemsPanel>
@@ -48,7 +47,7 @@
                 </ComboBox.ItemsPanel>
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="10.667" Height="20"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
@@ -57,16 +56,13 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="5,0,5,0" Grid.Row="2">
-            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="60">Grids</Label>
-            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="50" IsChecked="{Binding Path=GridsShow, Mode=TwoWay}" ToolTip="Insert chord grids at end of sheet">Show</CheckBox>
+            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="50">Grids</Label>
+            <CheckBox VerticalAlignment="Center" Margin="5,0,5,0" Width="55" IsChecked="{Binding Path=GridsShow, Mode=TwoWay}" ToolTip="Insert chord grids at end of sheet">Show</CheckBox>
             <Label Margin="0,0,-5,0">Size=</Label>
-            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="45" Text="20" Height="20" SelectedIndex="{Binding Path=GridsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=GridsSizes}" ToolTip="Size of hord grids"></ComboBox> 
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Margin="5,0,5,5" Grid.Row="3">
-            <Label Margin="0,0,0,0" VerticalAlignment="Center">Transpose by </Label>
-            <ComboBox Margin="5,0,5,0" VerticalAlignment="Center" Width="45" Height="20" SelectedIndex="{Binding Path=ChordsTransposeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=ChordsTranspose}" ToolTip="Transpose chords by half tones"></ComboBox>
-            <Label Margin="0,0,0,0" VerticalAlignment="Center">halftones</Label>
+            <ComboBox Margin="0,0,5,0" VerticalAlignment="Center" Width="50" Text="20" Height="20" FontSize="10.667" SelectedIndex="{Binding Path=GridsSizeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=GridsSizes}" ToolTip="Size of hord grids"></ComboBox>
+            <Label Margin="0,0,0,0" VerticalAlignment="Center" Width="82">Transpose by</Label>
+            <ComboBox Margin="5,0,5,0" VerticalAlignment="Center" Width="50" Height="20" FontSize="10.667" SelectedIndex="{Binding Path=ChordsTransposeIndex, Mode=TwoWay}" ItemsSource="{Binding Path=ChordsTranspose}" ToolTip="Transpose chords by half tones"></ComboBox>
+            <Label Margin="0,0,0,0" VerticalAlignment="Center">half tones</Label>
         </StackPanel>
     </Grid>
 </UserControl>
