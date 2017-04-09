@@ -425,7 +425,7 @@ namespace PdfChords
                     string newPath = directory + "\\" + newFileName + System.IO.Path.GetExtension(oldPath);
                     File.Move(oldPath, newPath);
                 }
-                browser.Update(System.IO.Path.GetFileNameWithoutExtension(Filepath), System.IO.Path.GetDirectoryName(Filepath));
+                browser.Update(newFileName, directory);
             }
         }
 
