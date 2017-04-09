@@ -227,6 +227,7 @@
     <Content Include="chordii.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="icons\export.png" />
     <Resource Include="icons\rename.png" />
     <Resource Include="icons\pdf.png" />
     <Resource Include="icons\ps.png" />

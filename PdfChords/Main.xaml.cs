@@ -84,14 +84,15 @@ namespace PdfChords
             viewer.ButtonPrint.Click += new RoutedEventHandler(Viewer_ButtonPrint_Click);
             viewer.PrinterIndex = Properties.Settings.Default.printerIndex;
 
-            editor.XmlExport = Properties.Settings.Default.xmlExport;
-            editor.PsExport = Properties.Settings.Default.psExport;
-            editor.PdfExport = Properties.Settings.Default.pdfExport;
+            editor.XmlCreate = Properties.Settings.Default.xmlExport;
+            editor.PsCreate = Properties.Settings.Default.psExport;
+            editor.PdfCreate = Properties.Settings.Default.pdfExport;
             editor.AutoPreview = Properties.Settings.Default.autoPreview;            
             editor.ButtonPreview.Click += new RoutedEventHandler(Editor_ButtonPreview_Click);
             editor.ButtonNew.Click +=new RoutedEventHandler(Editor_ButtonNew_Click);
             editor.ButtonSave.Click += new RoutedEventHandler(Editor_ButtonSave_Click);
             editor.ButtonSaveAs.Click += new RoutedEventHandler(Editor_ButtonSaveAs_Click);
+            editor.ButtonExport.Click += new RoutedEventHandler(Editor_ButtonExport_Click);
             editor.ButtonRename.Click += new RoutedEventHandler(Editor_Rename_Click);
             editor.ButtonOpen.Click += new RoutedEventHandler(Editor_ButtonOpen_Click);
             editor.TextEditor.Drop += new DragEventHandler(Editor_TextEditor_Drop);
@@ -131,9 +132,9 @@ namespace PdfChords
             Properties.Settings.Default.directory = browser.Directory;
             Properties.Settings.Default.printerIndex = viewer.PrinterIndex;
             Properties.Settings.Default.autoPreview = editor.AutoPreview;
-            Properties.Settings.Default.xmlExport = editor.XmlExport;
-            Properties.Settings.Default.psExport = editor.PsExport;
-            Properties.Settings.Default.pdfExport = editor.PdfExport;
+            Properties.Settings.Default.xmlExport = editor.XmlCreate;
+            Properties.Settings.Default.psExport = editor.PsCreate;
+            Properties.Settings.Default.pdfExport = editor.PdfCreate;
             Properties.Settings.Default.Save();
 
             logFile.Close();
@@ -319,7 +320,7 @@ namespace PdfChords
             {
                 File.WriteAllText(Filepath + Defines.PRO_FILE_EXTENSION, editor.TextEditor.Text);
                 FileHasChanged = false;
-                Export();                
+                Create();                
             }
 
             if (editor.AutoPreview)
@@ -331,6 +332,40 @@ namespace PdfChords
         void Editor_ButtonSaveAs_Click(object sender, EventArgs e)
         {
             SaveAs();
+        }
+
+
+        bool Export()
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.DefaultExt = Defines.PDF_FILE_EXTENSION;
+            dlg.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            string sourcePath = Filepath + Defines.PDF_FILE_EXTENSION;
+
+            if (!File.Exists(sourcePath))
+            {
+                Error.Show("Safe sheet as pdf to export it");
+                return false;
+            }
+
+            dlg.FileName = System.IO.Path.GetFileNameWithoutExtension(sourcePath);
+            if (dlg.ShowDialog() ?? false)
+            {
+                string targetPath = dlg.FileName;
+                File.Copy(sourcePath, targetPath, true);
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        void Editor_ButtonExport_Click(object sender, EventArgs e)
+        {
+            Save();
+            Export();
         }
 
         bool SaveAs () {
@@ -514,13 +549,13 @@ namespace PdfChords
             Cursor = Cursors.Arrow;
         }  
 
-        void Export()
+        void Create()
         {
             Cursor = Cursors.Wait;
 
-            bool do_ps = editor.PsExport;
-            bool do_pdf = editor.PdfExport;
-            bool do_xml = editor.XmlExport;
+            bool do_ps = editor.PsCreate;
+            bool do_pdf = editor.PdfCreate;
+            bool do_xml = editor.XmlCreate;
 
             try
             {
