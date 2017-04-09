@@ -400,18 +400,30 @@ namespace PdfChords
 
         void Rename()
         {
-            string oldFilePath = Filepath;
-            if (SaveAs())
+            if (Filepath == null || Filepath == "")
             {
-                if (oldFilePath != null && oldFilePath != Filepath)
+                return;
+            }
+
+            string oldFileName = System.IO.Path.GetFileNameWithoutExtension(Filepath);
+            string directory = System.IO.Path.GetDirectoryName(Filepath);
+
+            InputBox.Parameters inputBoxParams = new InputBox.Parameters()
+            {
+                Info = "Rename current sheet",
+                Input = "New Name = ",
+                Text = oldFileName
+            };
+            InputBox inputBox = new InputBox(ref inputBoxParams);
+
+            if (inputBox.ShowDialog().Value == true && inputBoxParams.Text != "")
+            {
+                string newFileName = inputBoxParams.Text;                                               
+                string[] files = Directory.GetFiles(directory, oldFileName + ".*");
+                foreach (string oldPath in files)
                 {
-                    string directory = System.IO.Path.GetDirectoryName(oldFilePath);
-                    string name = System.IO.Path.GetFileName(oldFilePath);
-                    string[] files = System.IO.Directory.GetFiles(directory, name + ".*");
-                    foreach (String file in files)
-                    {
-                        File.Delete(file);
-                    }
+                    string newPath = directory + "\\" + newFileName + System.IO.Path.GetExtension(oldPath);
+                    File.Move(oldPath, newPath);
                 }
                 browser.Update(System.IO.Path.GetFileNameWithoutExtension(Filepath), System.IO.Path.GetDirectoryName(Filepath));
             }
