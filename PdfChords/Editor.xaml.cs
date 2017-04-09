@@ -318,7 +318,7 @@ namespace PdfChords
         }
 
         bool xmlExport;
-        public bool XmlExport
+        public bool XmlCreate
         {
             get { return xmlExport; }
             set
@@ -329,7 +329,7 @@ namespace PdfChords
         }
 
         bool psExport;
-        public bool PsExport
+        public bool PsCreate
         {
             get { return psExport; }
             set
@@ -340,7 +340,7 @@ namespace PdfChords
         }
 
         bool pdfExport;
-        public bool PdfExport
+        public bool PdfCreate
         {
             get { return pdfExport; }
             set

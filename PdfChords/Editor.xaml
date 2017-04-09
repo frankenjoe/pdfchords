@@ -39,6 +39,9 @@
                 <Button Name="ButtonSaveAs" ToolTip="Save current sheet under new name">
                     <Image Source="icons/saveas.png" Height="16"/>
                 </Button>
+                <Button Name="ButtonExport" ToolTip="Export pdf (sheet will be saved)">
+                    <Image Source="icons/export.png" Height="16"/>
+                </Button>
                 <Button Name="ButtonRename" ToolTip="Rename current sheet">
                     <Image Source="icons/rename.png" Height="16" Width="16"/>
                 </Button>

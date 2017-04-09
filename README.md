@@ -8,7 +8,7 @@ PDFChords is a GUI wrapper for <a href="http://www.vromans.org/johan/projects/Ch
 Binary download
 =========
 
-- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_1_0_0_x86.zip">32-bit binaries</a>
-- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_1_0_0_x64.zip">64-bit binaries</a> 
+- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_x86.zip">32-bit binaries</a>
+- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_x64.zip">64-bit binaries</a> 
 
 Unzip and run PdfChords.exe (if extracted to a system folder run as adminstrator).

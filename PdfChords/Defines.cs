@@ -34,7 +34,7 @@ namespace PdfChords
         public const string PS_FILE_EXTENSION = ".ps";
 
         public const string TITLE = "PDFChords";
-        public const string VERSION = "1.0.1";
+        public const string VERSION = "1.0.2";
         public const string AUTHOR = "Johannes Wagner";
         public const string EMAIL = "frankenjoe@hotmail.com";
 
