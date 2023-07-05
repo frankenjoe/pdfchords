@@ -8,7 +8,7 @@ PDFChords is a graphical interface based on <a href="http://www.vromans.org/joha
 Binary download
 =========
 
-- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_x86.zip">32-bit binaries</a>
-- <a href="http://myweb.rz.uni-augsburg.de/~wagjohan/pdfchords_x64.zip">64-bit binaries</a> 
+- <a href="https://github.com/frankenjoe/pdfchords/raw/master/pdfchords_x32.zip">32-bit binaries</a>
+- <a href="https://github.com/frankenjoe/pdfchords/raw/master/pdfchords_x64.zip">64-bit binaries</a> 
 
 Unzip and run PdfChords.exe (if extracted to a system folder run as adminstrator).
